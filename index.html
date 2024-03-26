@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sunniversarry and Mooniversarry</title>
+<style>
+    body {
+        background: linear-gradient(to bottom, black, #000080); /* Blue sky to dark blue sky gradient */
+        color: white;
+        text-align: center;
+        height: 100vh;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    #sunMoon {
+        width: 50vw; /* Adjust size relative to viewport width */
+        height: 50vw; /* Adjust size relative to viewport width */
+        border-radius: 50%;
+        background-color: white; /* Default sun color */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: background-color 0.5s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 5vw;
+        color: black;
+    }
+</style>
+<script>
+    window.onload = function() {
+        const originalWidth = window.innerWidth;
+        const sunMoon = document.getElementById('sunMoon');
+        const sunMoonText = document.getElementById('sunMoonText');
+
+        window.addEventListener('resize', function() {
+            const currentWidth = window.innerWidth;
+            if (currentWidth > originalWidth) {
+                document.body.style.background = 'linear-gradient(to bottom, black, #000080)';
+                sunMoon.style.backgroundColor = 'white';
+                sunMoonText.textContent = 'Whenever I see your genuine smile, you make me feel calm, just like the moon :)';
+                sunMoonText.style.color = 'black';
+            } else {
+                document.body.style.background = 'linear-gradient(to bottom, #FFA500, #FFD700)';
+                sunMoon.style.backgroundColor = 'yellow';
+                sunMoonText.textContent = 'Just like the sun, you brighten up my day! I love your warmth and compassion, Adi :)';
+                sunMoonText.style.color = 'black';
+            }
+        });
+    };
+</script>
+</head>
+<body>
+    <div id="sunMoon">
+        <span id="sunMoonText">Happy Anniversary, Adi! I hope we stay strong and get through more challenges together. I love you!</span>
+    </div>
+</body>
+</html>
